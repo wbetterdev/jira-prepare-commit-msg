@@ -1,6 +1,18 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+ - package-ecosystem: "npm"
+   directory: "/"
+   commit-message:
+      prefix: 'Upgrade:'
+      prefix-development: 'Upgrade:(dev)'
+      include: 'scope'
+   schedule:
+      interval: weekly
+   versioning-strategy: increase-if-necessary
+   allow:
+      - dependency-type: direct
+   ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch']
+   labels:
+      - 'dependencies'
