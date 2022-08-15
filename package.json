@@ -57,6 +57,7 @@
   "scripts": {
     "clean": "rimraf -- ./bin/*",
     "compile": "npm run clean && npm run tsc",
+    "prepublish": "npm run compile",
     "eslint": "eslint --ext .js --ext .ts src/",
     "eslint:fix": "eslint --ext .js --ext .ts src/ --fix",
     "prettier": "prettier --parser typescript --write \"src/**/*.ts\"",
